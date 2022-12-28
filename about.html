@@ -4,9 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>About</title>
 </head>
 <body>
-    
+    <img src="https://raw.githubusercontent.com/MariyaSha/SimpleGreetingApp/main/logo.png" alt="Saturn Logo">
+    <br>
+    <span>
+        <h2>Enter a string of characters to play the game</h2>
+    </span>
+    <form action="greet" method="post">
+        <br>
+        <input type="text" name="name_input">
+        <br>
+        <input type="submit" value="Enter" id="greet">
+        <div>
+        {% for message in get_flashed_messages() %}
+            <p class="answer"> {{ message }} </p>
+        {% endfor %}
+        </div>
+    </form>
 </body>
 </html>

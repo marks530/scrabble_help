@@ -7,6 +7,22 @@
     <title>Home</title>
 </head>
 <body>
-    
+    <img src="https://raw.githubusercontent.com/MariyaSha/SimpleGreetingApp/main/logo.png" alt="Saturn Logo">
+    <br>
+    <span>
+        <h2>Enter a string of characters to play the game</h2>
+    </span>
+    <form action="greet" method="post">
+        <br>
+        <input type="text" name="name_input">
+        <br>
+        <input type="submit" value="Submit" id="greet">
+        <br>
+        <div>
+        {% for message in get_flashed_messages() %}
+        <p class="answer"> {{ message }} </p>
+        {% endfor %}
+        </div>
+    </form>
 </body>
 </html>
